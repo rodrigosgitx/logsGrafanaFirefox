@@ -1,0 +1,24 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light; --ink: #17323a; --muted: #61757a; --paper: #f8f5ed; --panel: #fffdf8; --line: #d8ded8; --accent: #e05a3f; --accent-dark: #bb3f2b; }
+body { margin: 0; width: 430px; min-height: 560px; background: radial-gradient(circle at 100% 0, #f4c7a5 0, transparent 31%), var(--paper); color: var(--ink); font: 13px/1.4 "Segoe UI", sans-serif; }
+.app { padding: 22px; }
+header { margin-bottom: 18px; }
+.eyebrow { margin: 0 0 5px; color: var(--accent-dark); font-size: 10px; font-weight: 700; letter-spacing: 1.7px; }
+h1 { margin: 0; font: 700 27px/1.05 Georgia, serif; letter-spacing: 0; }
+.intro { margin: 8px 0 0; color: var(--muted); }
+fieldset { margin: 0 0 13px; padding: 13px; border: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 88%, transparent); }
+legend { padding: 0 6px; color: var(--accent-dark); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px; }
+label { display: grid; gap: 5px; margin-bottom: 10px; color: var(--muted); font-size: 11px; font-weight: 700; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+select, input, textarea { width: 100%; border: 1px solid var(--line); border-radius: 4px; padding: 8px 9px; background: #fff; color: var(--ink); font: inherit; font-weight: 400; }
+textarea { resize: vertical; }
+button { border: 0; border-radius: 4px; padding: 10px 13px; background: var(--accent); color: white; cursor: pointer; font: 700 12px/1.2 inherit; }
+button:hover { background: var(--accent-dark); }
+form > button { width: 100%; }
+.result { margin-top: 15px; padding: 13px; border-left: 3px solid var(--accent); background: var(--panel); }
+.result-heading { display: flex; align-items: center; justify-content: space-between; }
+h2 { margin: 0; font: 700 16px Georgia, serif; }
+#copy { padding: 6px 9px; background: #e8eee9; color: var(--ink); }
+pre { max-height: 145px; overflow: auto; margin: 10px 0; white-space: pre-wrap; word-break: break-word; font: 11px/1.45 Consolas, monospace; }
+#status { margin: 0; color: var(--muted); font-size: 11px; }
+.hidden { display: none; }

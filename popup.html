@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>logsGrafana SGA</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <p class="eyebrow">SGA / LOKI</p>
+      <h1>Grafana Explore</h1>
+      <p class="intro">Construye una consulta y abre el resultado en una pestaña nueva.</p>
+    </header>
+
+    <form id="query-form">
+      <fieldset>
+        <legend>Rango temporal</legend>
+        <div class="row">
+          <label>Modo
+            <select id="time-mode">
+              <option value="Relativo">Relativo</option>
+              <option value="Absoluto">Absoluto</option>
+            </select>
+          </label>
+          <label id="since-wrap">Rango
+            <select id="since">
+              <option>15m</option><option>30m</option><option selected>1h</option>
+              <option>2h</option><option>6h</option><option>12h</option><option>1d</option>
+            </select>
+          </label>
+        </div>
+        <div id="absolute-range" class="hidden row">
+          <label>Inicio<input id="start" type="datetime-local"></label>
+          <label>Fin<input id="end" type="datetime-local"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Origen del log</legend>
+        <label>platform<select id="platform"></select></label>
+        <div class="row">
+          <label>projectkey<select id="projectkey"></select></label>
+          <label>environment<input id="environment" value="pro"></label>
+        </div>
+        <label>Slot / Regex objetivo<select id="target"></select></label>
+        <label>Texto libre<textarea id="free-text" rows="2" placeholder="Fragmento LogQL opcional"></textarea></label>
+      </fieldset>
+
+      <button type="submit">Generar consulta y abrir Grafana <span aria-hidden="true">↗</span></button>
+    </form>
+
+    <section id="result" class="result hidden" aria-live="polite">
+      <div class="result-heading"><h2>LogQL</h2><button id="copy" type="button" title="Copiar consulta">Copiar</button></div>
+      <pre id="query"></pre>
+      <p id="status"></p>
+    </section>
+  </main>
+  <script src="data.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

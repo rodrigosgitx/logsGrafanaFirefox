@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "logsGrafana SGA",
+  "version": "1.0.0",
+  "description": "Genera consultas Loki para logsGrafanaSGA y las abre en Grafana Explore.",
+  "browser_action": {
+    "default_title": "logsGrafana SGA",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["tabs"]
+}
